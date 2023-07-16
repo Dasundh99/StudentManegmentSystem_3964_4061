@@ -1,0 +1,70 @@
+﻿<Window x:Class="CRUDPractice.MainWindow2"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CRUDPractice"
+        mc:Ignorable="d" WindowStartupLocation="CenterScreen" AllowsTransparency="True" WindowStyle="None" Background="DeepSkyBlue"
+        Title="Admin Options" Height="470" Width="800">
+    
+    
+    <Grid Margin="0,0,0,0">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+
+        <ListView x:Name="UserList" Margin="30">
+            
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                </Style>
+            </ListView.ItemContainerStyle>
+            
+            <ListView.View>
+                <GridView>
+                    <GridView.ColumnHeaderContainerStyle>
+                        <Style TargetType="GridViewColumnHeader">
+                            <Setter Property="FontFamily" Value="Arial"/>
+                            <Setter Property="FontStyle" Value="Normal"/>
+                            <Setter Property="FontWeight" Value="Bold"/>
+                            <Setter Property="FontSize" Value="16"/>
+                        </Style>
+                    </GridView.ColumnHeaderContainerStyle>
+
+                    <GridViewColumn Header="ID" Width="140" DisplayMemberBinding="{Binding Id}"/>
+                    <GridViewColumn Header="USERNAME" Width="200" DisplayMemberBinding="{Binding Username}"/>
+                    <GridViewColumn Header="PASSWORD" Width="200" DisplayMemberBinding="{Binding Password}"/>
+                    <GridViewColumn Header="USERROLE" Width="200" DisplayMemberBinding="{Binding Userrole}"/>
+                </GridView>
+            </ListView.View>
+
+        </ListView>
+        <Grid x:Name="EditGride" HorizontalAlignment="Center">
+            <Label Content="USER DATA" Margin="306,237,310,-31" FontFamily="Arial Black" FontWeight="Bold" FontSize="18" HorizontalContentAlignment="Center" Background="Transparent"/>
+            <Label Content="USERNAME" Margin="10,271,700,-66" FontWeight="Bold" FontFamily="Arial Black"/>
+            <Label Content="PASSWORD" Margin="10,310,700,-105" FontWeight="Bold" FontFamily="Arial Black"/>
+            <Label Content="USERROLE" Margin="9,348,701,-143" FontWeight="Bold" FontFamily="Arial Black"/>
+            <TextBox x:Name="UserNameTextBox" Margin="100,267,30,-70" TextWrapping="Wrap" Height="30" Style="{DynamicResource TextBoxStyleRound}"/>
+            <TextBox x:Name="PassWordTextBox" Margin="100,307,30,-107" TextWrapping="Wrap" Height="30" Style="{DynamicResource TextBoxStyleRound}"/>
+            <TextBox x:Name="UserroleTextBox" Margin="100,348,30,-143" TextWrapping="Wrap" Height="30" Style="{DynamicResource TextBoxStyleRound}"/>
+        </Grid>
+
+        <Button x:Name="CreateButton" Content=" Create" Margin="50,174,650,31" RenderTransformOrigin="0.511,1.198" Grid.Row="1" Click="CreateButton_Click2" Width="100" Height="30" Style="{DynamicResource ButtonStyleRound}" FontWeight="Bold"/>
+        <Button x:Name="ReadButton" Content=" Read" Margin="200,174,500,31" RenderTransformOrigin="0.511,1.198" Grid.Row="1" Click="ReadButton_Click2" Width="100" Height="30" Style="{DynamicResource ButtonStyleRound}" FontWeight="Bold"/>
+        <Button x:Name="UpdateButton" Content=" Upadate" Margin="350,174,350,31" RenderTransformOrigin="0.511,1.198" Grid.Row="1" Click="UpdateButton_Click2" Width="100" Height="30" Style="{DynamicResource ButtonStyleRound}" FontWeight="Bold"/>
+        <Button x:Name="DeleteButton" Content=" Delete" Margin="500,174,200,31" RenderTransformOrigin="0.511,1.198" Grid.Row="1" Click="DeleteButton_Click2" Width="100" Height="30" Style="{DynamicResource ButtonStyleRound}" FontWeight="Bold"/>
+        <Button x:Name="BackButton" Content=" Back" Margin="650,174,50,31" RenderTransformOrigin="0.511,1.198" Grid.Row="1" Width="100" Height="30" Click="BackButton_Click" Style="{DynamicResource ButtonStyleRound}" FontWeight="Bold"/>
+        <Button Style="{DynamicResource ControlButton}" Content="X" Height="28" Margin="772,2,2,0" VerticalAlignment="Top" FontSize="22" BorderThickness="1,1,1,1" RenderTransformOrigin="0.499,0.415" FontFamily="Arial Black" Click="Button_Click_2"/>
+        <Label Content="Admin/User" Margin="357,117,357,88" FontWeight="Bold" FontFamily="Arial Black" Grid.Row="1" Opacity="0.25"/>
+
+
+
+
+
+    </Grid>
+
+
+</Window>
